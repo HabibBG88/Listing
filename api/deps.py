@@ -1,4 +1,3 @@
-# api/deps.py
 from typing import Generator
 import os
 from sqlalchemy import create_engine
