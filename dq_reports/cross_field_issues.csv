@@ -1,0 +1,8 @@
+field,issue
+floor,negative values: 10
+room_count,non-integer counts: 780
+balcony_count,non-integer counts: 61751
+terrace_count,non-integer counts: 76236
+build_year,suspicious years: 350
+price,zero/negative or null values: 16
+terrace_area,non-positive areas: 13

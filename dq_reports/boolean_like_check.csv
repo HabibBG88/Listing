@@ -1,0 +1,6 @@
+column,distinct_count,top_values
+has_garden,3,nan:99800; false:180; true:20
+has_passenger_lift,3,nan:70922; true:16800; false:12278
+is_new_construction,1,false:100000
+has_cellar,3,nan:53617; false:30520; true:15863
+is_furnished,3,false:49252; nan:44074; true:6674

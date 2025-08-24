@@ -1,0 +1,16 @@
+Loaded listings.csv shape=(100000, 23)
+standardize_columns: (100000, 23) -> (100000, 23)
+remove_exact_duplicates: (100000, 23) -> (100000, 23)
+deduplicate_business_key: (100000, 23) -> (57004, 23)
+convert_dtypes: (57004, 23) -> (57004, 23)
+cast_numeric_like: (57004, 23) -> (57004, 23)
+numeric_sanity: (57004, 23) -> (57004, 23)
+drop_columns: (57004, 23) -> (57004, 22)
+impute: (57004, 22) -> (57004, 22)
+tighten_types: (57004, 22) -> (57004, 22)
+
+Details:
+- deduplicate_business_key: {'removed': 42996}
+- numeric_sanity: {'floor': 'negatives->NA: 6', 'build_year': 'out_of_range->NA: 274'}
+- drop_columns: {'dropped': ['has_garden']}
+- impute: {'floor': 'int_median=2 filled=38779', 'room_count': 'int_median=4 filled=394', 'balcony_count': 'int_median=0 filled=33885', 'terrace_count': 'int_median=1 filled=40629', 'build_year': 'int_median=1976 filled=40459', 'area': 'median=89.0 filled=681', 'site_area': 'median=560.0 filled=25601', 'terrace_area': 'median=24.0 filled=56978', 'has_passenger_lift': 'bool_mode=1.0 filled=41356', 'has_cellar': 'bool_mode=0.0 filled=29235', 'is_furnished': 'bool_mode=0.0 filled=23919', 'zipcode': "obj_mode='30000' filled=58"}
