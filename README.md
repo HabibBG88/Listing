@@ -17,7 +17,7 @@ This project implements an **end-to-end data pipeline** for processing real esta
 ```
 project_root(Listing)/
 ├── data_exploration.py         # Data exploration & profiling (generates dq_report)
-├── design_table.sql                  # Database schema (3NF + SCD2)
+├── design_table.sql            # Database schema (3NF + SCD2)
 ├── cleaner.py                  # Cleans raw listings into normalized format
 ├── clean_artifacts_py/
 │   ├── listings_cleaned.csv
