@@ -48,7 +48,7 @@ from sqlalchemy.exc import SQLAlchemyError
 # ---------------- Config ----------------
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-CLEANED_CSV  = os.getenv("CLEANED_CSV")  #"/XXXX/listings_cleaned.csv" #
+CLEANED_CSV  = os.getenv("CLEANED_CSV")  #"/XXXX/listings_cleaned.csv"  
 LOG_LEVEL    = os.getenv("LOADER_LOG_LEVEL", "INFO").upper()
 
 if not DATABASE_URL:
