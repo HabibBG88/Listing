@@ -3,7 +3,7 @@
 """
 cleaner.py — Python 3.8–compatible data cleaning pipeline for listings.csv
 
-- Preserves description_fr (no drop, no impute).
+- Preserves description_fr.
 - Zip code normalization to strict 5 digits.
 - Nullable Int64 for: floor, room_count, balcony_count, terrace_count, build_year.
 - Modular steps with timing/logging + fail-fast.
@@ -408,7 +408,7 @@ class Impute:
         return df
 
 class TightenTypes:
-    """Cast booleans & small-cardinality categoricals for memory/speed (never touch description_fr)."""
+    """Cast booleans & small-cardinality categoricals for memory/speed."""
     name = "tighten_types"
 
     def __init__(self, policy: CleaningPolicy):
