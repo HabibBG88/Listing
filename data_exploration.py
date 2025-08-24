@@ -1,5 +1,5 @@
 # ================================================================
-# Data Quality Investigation (Audit-Only)  
+# Data Quality Investigation
 # ================================================================
 import pandas as pd
 import numpy as np
@@ -56,7 +56,7 @@ full_dup_count = df.duplicated().sum()
 print(f"\n -- Full-row duplicates: {full_dup_count}")
 
 dup_report = pd.DataFrame({"full_row_duplicates": [full_dup_count]})
-# Business key heuristic: if a 'listing_id' column exists, validate uniqueness
+# Business key: if a 'listing_id' column exists, validate uniqueness
 if "listing_id" in df.columns:
     listing_dup = df["listing_id"].duplicated().sum()
     dup_report["listing_id_duplicates"] = [listing_dup]
@@ -184,7 +184,7 @@ print(iqr_report.head(30))
 iqr_report.to_csv(REPORT_DIR / "iqr_outliers.csv", index=False)
 
 # --------------------
-# 8) Cross-field Business Logic Checks (dataset-agnostic heuristics)
+# 8) Cross-field Business Logic Checks 
 # --------------------
 issues = []
 
