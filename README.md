@@ -36,7 +36,7 @@ project_root(Listing)/
 ├── Data_quality/
 │   ├── dq_profile.sql          # Profiling metrics table
 │   ├── dq_constraints.sql      # Hard constraints (DB-level checks)
-│   └── dq_check.py             # Python anomaly detection script
+│   └── dq_checks.py             # Python anomaly detection script
 ├── requirements.txt            # Requirements for the project
 └── README.md                   # Documentation
               
@@ -85,7 +85,7 @@ Output: `dq_reports/`
 ### 3. Clean Raw Data
 ```bash
 export CLEANED_CSV="/path/to/clean_artifacts_py/listings_cleaned.csv"
-python cleaner/cleaner.py
+python cleaner.py
 ```
 Artifacts:
 - `listings_cleaned.csv`
@@ -94,14 +94,14 @@ Artifacts:
 ### 4. Load Data
 ```bash
 export DATABASE_URL="postgresql+psycopg2://user:pass@localhost:5432/testdb"
-python loader/loader.py
+python loader.py
 ```
 
 ### 5. Run API
 ```bash
 uvicorn api.main:app --reload --port 8000
 ```
-Then visit: [http://localhost:8000/docs](http://localhost:8000/docs)
+Then visit: [http://localhost:8000]
 
 ---
 
@@ -109,18 +109,18 @@ Then visit: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ### Profiling (daily metrics)
 ```bash
-psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f dq/dq_profile.sql 
+psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f Data_quality/dq_profile.sql 
 Generates a **dq_daily_metrics table**:
 ```
 
 ### Constraints (hard checks)
 ```bash
-psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f dq/dq_constraints.sql
+psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f Data_quality/dq_constraints.sql
 ```
 
 ### Python DQ Checks
 ```bash
-python dq/dq_check.py
+python Data_quality/dq_checks.py
 ```
 
 ---
