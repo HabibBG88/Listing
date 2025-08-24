@@ -1,4 +1,3 @@
-# api/routers/listings.py
 from typing import Optional, Literal, Dict, Any
 from fastapi import APIRouter, Depends, Query, HTTPException
 from sqlalchemy.engine import Connection
