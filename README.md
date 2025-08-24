@@ -17,12 +17,12 @@ This project implements an **end-to-end data pipeline** for processing real esta
 ```
 project_root(Listing)/
 ├── data_exploration.py         # Data exploration & profiling (generates dq_report)
-├── design.sql                  # Database schema (3NF + SCD2)
+├── design_table.sql                  # Database schema (3NF + SCD2)
 ├── cleaner.py                  # Cleans raw listings into normalized format
 ├── clean_artifacts_py/
 │   ├── listings_cleaned.csv
 │   └── cleaning_changelog.txt
-├── loader.py/                  # Loads cleaned data into Postgres
+├── loader.py/                  # Loads cleaned data into Postgres (pipeline)
 │                 
 ├── api/
 │   ├── main.py                 # FastAPI entrypoint
