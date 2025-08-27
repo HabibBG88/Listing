@@ -93,7 +93,7 @@ Artifacts:
 ### 4. Load Data
 ```bash
 export CLEANED_CSV="/path/to/clean_artifacts_py/listings_cleaned.csv"
-DATABASE_URL="postgresql+psycopg2://user:pass@localhost:5432/testdb"
+export DATABASE_URL="postgresql+psycopg2://user:pass@localhost:5432/testdb"
 python loader.py
 ```
 
