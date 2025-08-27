@@ -84,7 +84,6 @@ Output: `dq_reports/`
 
 ### 3. Clean Raw Data
 ```bash
-export CLEANED_CSV="/path/to/clean_artifacts_py/listings_cleaned.csv"
 python cleaner.py
 ```
 Artifacts:
@@ -93,7 +92,8 @@ Artifacts:
 
 ### 4. Load Data
 ```bash
-export DATABASE_URL="postgresql+psycopg2://user:pass@localhost:5432/testdb"
+export CLEANED_CSV="/path/to/clean_artifacts_py/listings_cleaned.csv"
+DATABASE_URL="postgresql+psycopg2://user:pass@localhost:5432/testdb"
 python loader.py
 ```
 
@@ -149,4 +149,3 @@ curl "http://localhost:8000/api/listings?transaction_type=SELL&item_type=HOUSE&m
 - **Data Quality modules**: detect anomalies early (zip coverage, price drift).
 
 ```
-
